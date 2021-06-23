@@ -61,7 +61,7 @@ public class Controller {
         if (txtNumber.getText().isEmpty()) {
 
             lblError.setTextFill(Color.RED);
-            lblError.setText("Pole jest puste!");
+            lblError.setText("Empty field!!");
             return;
 
         }
@@ -70,24 +70,21 @@ public class Controller {
 
         String StrNumber = txtNumber.getText();
 
-        int IntNumber = 0;
+        int IntNumber;
 
         try {
             IntNumber = Integer.parseInt(StrNumber);
-            lblError.setTextFill(Color.GREEN);
-            lblError.setText("Podano poprawną liczbę");
-
 
         } catch (NumberFormatException e) {
 
             lblError.setTextFill(Color.RED);
-            lblError.setText("Podaj liczbę!");
+            lblError.setText("Enter valid number!");
             return;
         }
 
         if((IntNumber > 255) || (IntNumber <= 0)){
             lblError.setTextFill(Color.RED);
-            lblError.setText("Przekroczyles zakres!");
+            lblError.setText("You've exceeded the scope!\n");
             ClearFields();
             return;
         }
